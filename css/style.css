@@ -1,13 +1,48 @@
 /* Foto de Anni Roenkae: https://www.pexels.com/pt-br/foto/foto-de-ilustracao-multicolorida-2832468/ */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 0.95rem;
     line-height: 1rem;
     transition: all 0.2s ease;
+}
+
+.loading-container{
+    position: absolute;
+    height: 100svh;
+    width: 100svw;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dbdbdb;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 1s ease;
+}
+
+.loading-container img{
+    width: 80px;
+    animation-name: rodar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.esconder{
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes rodar {
+    0%{transform: rotate(0deg)} 
+    100%{ transform: rotate(360deg);} 
 }
 
 .ui-container{
@@ -16,6 +51,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    z-index: 50;
+    top: 0
 }
 
 .desktop{

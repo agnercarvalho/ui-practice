@@ -1,7 +1,12 @@
-dados = dados()
+// Simula carregamento dos dados
+let dados
+const getDados = leDados(dadosRecebidos => {
+    dados = dadosRecebidos
+    main(dados)
 
-//Simula um tempo de carregamento
-main()
+    const loading = document.querySelector(".loading-container")
+    paraCarregamento(loading)
+})
 
 //Cria os principais elementos da página
 function main(progs){
@@ -24,6 +29,14 @@ function main(progs){
     dock.classList.add("dock")
     container.appendChild(dock)
     criarDock(dock)
+}
+
+//Desativar tela de loading
+function paraCarregamento(elemento){
+    elemento.classList.add("esconder")
+    setTimeout(() => {
+        elemento.remove()
+    }, 2000);
 }
 
 function criarBarra(barra){
