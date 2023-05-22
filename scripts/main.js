@@ -38,7 +38,7 @@ function atualizarHora(data){
     data.innerText = date.getDate() + "/" + date.getMonth() + " - " + date.getHours() + ":" + date.getMinutes()
     setInterval(() => {
         data.innerText = date.getDate() + "/" + date.getMonth() + " - " + date.getHours() + ":" + date.getMinutes()
-    }, 3000);
+    }, 10000);
 }
 
 function criarDock(dock){
@@ -54,7 +54,7 @@ function criarDock(dock){
 
         const iconeProg = document.createElement("img")
         iconeProg.classList.add("icone-prog")
-        iconeProg.src = `url(${dado.icone})`
+        iconeProg.src = `${dado.icone}`
         item.appendChild(iconeProg)
 
         dock.appendChild(item)
